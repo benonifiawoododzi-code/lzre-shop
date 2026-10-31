@@ -60,7 +60,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" className={`${outfit.variable} ${sourceSans.variable}`}>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
-        <SiteHeader cartCount={cartCount} categories={categories} name={name} userName={userName} />
+        <SiteHeader cartCount={cartCount} categories={categories} name={name} phone={phone} userName={userName} />
         <main id="main">{children}</main>
         <SiteFooter address={address} name={name} paystack={paystackConfigured()} phone={phone} supportEmail={supportEmail} />
       </body>

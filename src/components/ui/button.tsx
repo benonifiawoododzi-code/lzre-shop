@@ -24,7 +24,7 @@ export function Button({
   type?: "button" | "submit";
   disabled?: boolean;
 }) {
-  const classNames = cn("inline-flex min-h-11 items-center justify-center px-4 text-sm font-semibold", styles[variant], className);
+  const classNames = cn("inline-flex min-h-11 items-center justify-center rounded-full px-5 text-sm font-semibold", styles[variant], className);
   if (href) return <Link className={classNames} href={href}>{children}</Link>;
   return <button className={classNames} disabled={disabled} type={type}>{children}</button>;
 }

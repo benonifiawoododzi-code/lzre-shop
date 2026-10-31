@@ -3,18 +3,19 @@
 @theme {
   --font-sans: var(--font-source), "Source Sans 3", sans-serif;
   --font-display: var(--font-outfit), Outfit, sans-serif;
-  --color-navy: #0c1c2e;
-  --color-navy-soft: #16324d;
-  --color-ivory: #f6f3ee;
-  --color-paper: #fffcf8;
-  --color-sand: #ebe4d8;
-  --color-ink: #142033;
-  --color-muted: #5d6b7a;
-  --color-line: #ddd6cb;
-  --color-signal: #0e6bff;
-  --color-signal-ink: #0847b0;
-  --color-success: #0f7a4a;
-  --color-warning: #8a5a00;
+  --color-navy: #1c3d32;
+  --color-navy-soft: #2c5646;
+  --color-ivory: #f7f4ee;
+  --color-paper: #ffffff;
+  --color-sand: #efe6d8;
+  --color-blush: #f6d7cf;
+  --color-ink: #1c1c1c;
+  --color-muted: #6d675f;
+  --color-line: #e7e0d4;
+  --color-signal: #5e7340;
+  --color-signal-ink: #3e5228;
+  --color-success: #2f6b45;
+  --color-warning: #c6a15a;
   --color-danger: #9f1d1d;
 }
 
@@ -26,6 +27,19 @@ body {
   background: var(--color-ivory);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+button,
+input[type="submit"] {
+  border-radius: 9999px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+select,
+textarea {
+  border-radius: 0.85rem;
+  background: white;
 }
 
 h1, h2, h3, .font-display {

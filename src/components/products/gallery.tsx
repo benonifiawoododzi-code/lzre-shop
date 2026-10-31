@@ -8,13 +8,13 @@ export function Gallery({ images }: { images: { url: string; alt: string }[] }) 
   const image = images[index] ?? { url: "/demo-image/lzre", alt: "Product" };
   return (
     <div>
-      <button className="block w-full bg-sand" onClick={() => setOpen(true)} type="button">
+      <button className="block w-full overflow-hidden rounded-3xl bg-sand" onClick={() => setOpen(true)} type="button">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img alt={image.alt} className="aspect-square w-full object-cover" src={image.url} />
       </button>
       <div className="mt-3 flex gap-2">
         {images.map((item, itemIndex) => (
-          <button aria-label={`Show image ${itemIndex + 1}`} className={`border ${itemIndex === index ? "border-navy" : "border-transparent"}`} key={item.url} onClick={() => setIndex(itemIndex)} type="button">
+          <button aria-label={`Show image ${itemIndex + 1}`} className={`overflow-hidden rounded-xl border ${itemIndex === index ? "border-navy" : "border-transparent"}`} key={item.url} onClick={() => setIndex(itemIndex)} type="button">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img alt="" className="size-16 object-cover" src={item.url} />
           </button>

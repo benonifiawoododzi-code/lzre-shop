@@ -120,7 +120,7 @@ export function ProductBrowser({
             {popular && popular.length > 0 ? <p className="mt-4 text-sm">Popular searches: {popular.join(", ")}</p> : null}
           </div>
         ) : (
-          <div className={view === "grid" ? "mt-6 grid gap-x-6 sm:grid-cols-2 xl:grid-cols-3" : "mt-6"}>
+          <div className={view === "grid" ? "mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3" : "mt-6 grid gap-5"}>
             {products.map((product) => <ProductCardView key={product.id} layout={view} product={product} />)}
           </div>
         )}

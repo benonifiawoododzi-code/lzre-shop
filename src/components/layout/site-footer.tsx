@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Leaf } from "lucide-react";
 import { subscribeNewsletterAction } from "@/actions/content";
 
 export function SiteFooter({
@@ -15,51 +16,65 @@ export function SiteFooter({
   paystack: boolean;
 }) {
   return (
-    <footer className="mt-16 bg-navy text-ivory">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
-        <div>
-          <p className="font-display text-2xl">{name}</p>
-          <p className="mt-3 text-sm text-ivory/80">One catalog. Sellers fulfill their own orders. Prices are confirmed on the server at checkout.</p>
-        </div>
-        <div className="text-sm">
-          <p className="font-semibold">Shop</p>
-          <div className="mt-3 grid gap-2">
-            <Link href="/categories">Categories</Link>
-            <Link href="/products">All products</Link>
-            <Link href="/brands">Brands</Link>
-            <Link href="/wishlist">Wishlist</Link>
+    <footer className="mt-16">
+      <section className="bg-sand">
+        <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 py-12 md:grid-cols-[1fr_1fr]">
+          <div>
+            <h2 className="font-display text-3xl text-navy">Join our community</h2>
+            <p className="mt-2 max-w-md text-sm text-muted">Be the first to hear about new arrivals and marketplace news. We store this email only after you agree.</p>
           </div>
-        </div>
-        <div className="text-sm">
-          <p className="font-semibold">Help</p>
-          <div className="mt-3 grid gap-2">
-            <Link href="/legal/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/legal/shipping">Shipping</Link>
-            <Link href="/legal/returns">Returns</Link>
-            <Link href="/legal/privacy">Privacy</Link>
-            <Link href="/legal/terms">Terms</Link>
-            <Link href="/legal/selling">Selling on {name}</Link>
-          </div>
-        </div>
-        <div className="text-sm">
-          <p className="font-semibold">Newsletter</p>
-          <p className="mt-3 text-ivory/80">We save your address here. An external newsletter provider is used only when email delivery is configured.</p>
-          <form action={subscribeNewsletterAction} className="mt-3 grid gap-2">
+          <form action={subscribeNewsletterAction} className="grid gap-3">
             <label className="sr-only" htmlFor="newsletter-email">Email</label>
-            <input className="h-11 border border-white/20 bg-transparent px-3" id="newsletter-email" name="email" placeholder="Email address" type="email" required />
-            <label className="flex gap-2 text-xs"><input name="consent" required type="checkbox" value="true" /> I agree to store this email for marketplace news.</label>
-            <button className="h-11 bg-ivory text-navy" type="submit">Save email</button>
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <input className="h-12 flex-1 border border-line bg-paper px-4" id="newsletter-email" name="email" placeholder="Enter your email address" type="email" required />
+              <button className="h-12 bg-navy px-6 font-semibold text-ivory" type="submit">Subscribe</button>
+            </div>
+            <label className="flex gap-2 text-xs text-muted"><input name="consent" required type="checkbox" value="true" /> I agree to store this email for marketplace news.</label>
           </form>
         </div>
-      </div>
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-wrap gap-4 px-4 py-4 text-xs text-ivory/70">
-          <span>{address}</span>
-          <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
-          <a href={`tel:${phone}`}>{phone}</a>
-          <span>{paystack ? "Online payments: Paystack cards and mobile money." : "Online payments are not configured."}</span>
-          <span>Cash on delivery where the delivery zone allows it.</span>
+      </section>
+      <div className="bg-navy text-ivory">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <p className="flex items-center gap-2 font-display text-2xl"><Leaf className="size-5" /> {name}</p>
+            <p className="mt-3 text-sm text-ivory/75">One catalog. Sellers fulfill their own orders. Prices are confirmed on the server at checkout.</p>
+          </div>
+          <div className="text-sm">
+            <p className="font-semibold">Shop</p>
+            <div className="mt-3 grid gap-2 text-ivory/80">
+              <Link href="/products">All products</Link>
+              <Link href="/products?sort=newest">New arrivals</Link>
+              <Link href="/products?discount=1">Deals</Link>
+              <Link href="/categories">Categories</Link>
+              <Link href="/brands">Brands</Link>
+            </div>
+          </div>
+          <div className="text-sm">
+            <p className="font-semibold">Help</p>
+            <div className="mt-3 grid gap-2 text-ivory/80">
+              <Link href="/contact">Contact</Link>
+              <Link href="/legal/shipping">Shipping</Link>
+              <Link href="/legal/returns">Returns</Link>
+              <Link href="/legal/selling">Selling on {name}</Link>
+            </div>
+          </div>
+          <div className="text-sm">
+            <p className="font-semibold">Company</p>
+            <div className="mt-3 grid gap-2 text-ivory/80">
+              <Link href="/legal/about">About</Link>
+              <Link href="/legal/privacy">Privacy</Link>
+              <Link href="/legal/terms">Terms</Link>
+              <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+              <a href={`tel:${phone}`}>{phone}</a>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-6xl flex-wrap gap-4 px-4 py-4 text-xs text-ivory/70">
+            <span>{address}</span>
+            <span>{paystack ? "Online payments: Paystack cards and mobile money." : "Online payments are not configured."}</span>
+            <span>Cash on delivery where the delivery zone allows it.</span>
+          </div>
         </div>
       </div>
     </footer>
