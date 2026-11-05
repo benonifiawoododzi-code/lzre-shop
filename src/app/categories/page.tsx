@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CategoryIcon } from "@/components/catalog/category-icon";
 import { getVisibleCategories } from "@/lib/catalog/browse";
 
-export const metadata: Metadata = { title: "Categories", description: "Browse LZRE departments and subcategories." };
+export const metadata: Metadata = { title: "Categories", description: "Browse LZRE Books categories." };
 
 export default async function CategoriesPage() {
   const categories = await getVisibleCategories();

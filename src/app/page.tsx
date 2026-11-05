@@ -14,7 +14,7 @@ export default async function HomePage() {
   if (home.status !== "ready") {
     return (
       <section className="mx-auto max-w-3xl px-4 py-16">
-        <p className="text-xs uppercase tracking-[0.16em] text-signal-ink">LZRE</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-signal-ink">LZRE Books</p>
         <h1 className="mt-3 font-display text-4xl text-navy">The marketplace database is not ready.</h1>
         <p className="mt-4 text-muted">
           {home.status === "offline"
@@ -34,7 +34,7 @@ export default async function HomePage() {
   const announcement = home.promotions.find((promo) => promo.placement === "ANNOUNCEMENT" && isPromotionLive(promo, new Date()));
   const hero = home.promotions.find((promo) => promo.placement === "HERO" && isPromotionLive(promo, new Date()));
   const parents = home.categories.filter((category) => !category.parentId);
-  const spotlightSlugs = ["phones-and-tablets", "computers", "beauty"];
+  const spotlightSlugs = ["fiction", "childrens-books", "school-books"];
   const spotlight = spotlightSlugs.map((slug) => parents.find((category) => category.slug === slug)).filter((category) => category != null);
   const tiles = spotlight.length > 0 ? spotlight : parents.slice(0, 3);
   const heroProducts = [...home.featured, ...home.newest.filter((product) => !home.featured.some((item) => item.id === product.id))].slice(0, 4);
@@ -88,7 +88,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <ProductRail href="/products" products={[...home.featured, ...home.newest.filter((product) => !home.featured.some((item) => item.id === product.id))].slice(0, 4)} title="Featured products" />
+      <ProductRail href="/products" products={[...home.featured, ...home.newest.filter((product) => !home.featured.some((item) => item.id === product.id))].slice(0, 4)} title="Featured books" />
 
       {tiles.length > 0 ? (
         <section className="mx-auto grid max-w-6xl gap-4 px-4 py-4 md:grid-cols-3">

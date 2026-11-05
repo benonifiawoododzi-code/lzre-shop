@@ -241,7 +241,7 @@ export async function placeOrder(input: {
   const email = await sendEmail({
     to: input.customer.email,
     template: "order-placed",
-    subject: `LZRE order ${created.number}`,
+    subject: `LZRE Books order ${created.number}`,
     body: cod
       ? `Order ${created.number} is confirmed for cash on delivery. Pay the courier when the parcel arrives. This is not a card receipt.`
       : `Order ${created.number} is waiting for payment. It is not paid yet.`,

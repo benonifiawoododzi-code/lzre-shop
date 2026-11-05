@@ -15,7 +15,7 @@ export default async function EditProductPage({ params }: { params: Promise<{ id
   });
   if (!product) notFound();
   const [categories, site] = await Promise.all([
-    prisma.category.findMany({ orderBy: { name: "asc" } }),
+    prisma.category.findMany({ where: { OR: [{ visible: true }, { id: product.categoryId }] }, orderBy: { name: "asc" } }),
     prisma.siteConfiguration.findUnique({ where: { id: "default" } }),
   ]);
   return (

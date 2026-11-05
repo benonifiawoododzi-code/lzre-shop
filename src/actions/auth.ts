@@ -48,8 +48,8 @@ export async function registerAction(_state: { message: string }, formData: Form
     data: { userId: user.id, type: "EMAIL_VERIFY", tokenHash: createHash("sha256").update(token).digest("hex"), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24) },
   });
   const link = `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/api/verify-email?token=${token}`;
-  const email = await sendEmail({ to: user.email, template: "verify-email", subject: "Verify your LZRE email", body: `Verify your email: ${link}` });
-  await notifyUser(user.id, { type: "ACCOUNT", title: "Welcome to LZRE", body: email.delivered ? "Check your email to verify this account." : "Your account is ready. Email delivery is not configured, so the verification message was only saved." });
+  const email = await sendEmail({ to: user.email, template: "verify-email", subject: "Verify your LZRE Books email", body: `Verify your email: ${link}` });
+  await notifyUser(user.id, { type: "ACCOUNT", title: "Welcome to LZRE Books", body: email.delivered ? "Check your email to verify this account." : "Your account is ready. Email delivery is not configured, so the verification message was only saved." });
   await signIn("credentials", { email: parsed.data.email, password: parsed.data.password, redirect: false });
   await mergeGuestCommerce(user.id);
   redirect("/account");
@@ -88,7 +88,7 @@ export async function forgotPasswordAction(_state: { message: string }, formData
       data: { userId: user.id, type: "PASSWORD_RESET", tokenHash: createHash("sha256").update(token).digest("hex"), expiresAt: new Date(Date.now() + 1000 * 60 * 30) },
     });
     const link = `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/reset-password?token=${token}`;
-    await sendEmail({ to: user.email, template: "password-reset", subject: "Reset your LZRE password", body: `Reset your password: ${link}` });
+    await sendEmail({ to: user.email, template: "password-reset", subject: "Reset your LZRE Books password", body: `Reset your password: ${link}` });
   }
   return { message: "If an account exists, a reset message was queued. It is only delivered when email is configured." };
 }

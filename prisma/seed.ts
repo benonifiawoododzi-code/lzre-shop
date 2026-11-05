@@ -8,41 +8,26 @@ import { brandDefaults } from "../src/config/site";
 loadEnv();
 
 const categories = [
-  ["Phones and tablets", "phones-and-tablets", "Smartphone", "Handsets, tablets, and accessories sold by approved sellers."],
-  ["Computers", "computers", "Laptop", "Laptops, desktops, and computer accessories."],
-  ["Fashion", "fashion", "Shirt", "Clothing and shoes from independent sellers."],
-  ["Watches and jewellery", "watches-and-jewellery", "Watch", "Watches and jewellery."],
-  ["Beauty", "beauty", "Sparkles", "Skin, hair, and personal care."],
-  ["Health", "health", "HeartPulse", "Everyday health and wellness goods."],
-  ["Furniture", "furniture", "Sofa", "Furniture for home and office."],
-  ["Kitchen", "kitchen", "Utensils", "Cookware and small kitchen appliances."],
-  ["Tools", "tools", "Hammer", "Hand tools and workshop supplies."],
-  ["Sports", "sports", "Dumbbell", "Sports and fitness equipment."],
-  ["Toys", "toys", "Puzzle", "Toys and games."],
-  ["Baby", "baby", "Baby", "Baby and toddler goods."],
-  ["Books", "books", "BookOpen", "Books and stationery."],
-  ["Automotive", "automotive", "Car", "Car accessories and parts."],
-  ["Groceries", "groceries", "ShoppingBasket", "Packaged food and household staples."],
-  ["Garden", "garden", "TreePine", "Garden and outdoor supplies."],
-  ["Office", "office", "Printer", "Office supplies and equipment."],
-  ["Gifts", "gifts", "Gift", "Gifts and seasonal goods."],
-  ["Electronics parts", "electronics-parts", "Cpu", "Components and small electronics."],
-  ["General", "general", "Tag", "Goods that do not fit another category."],
+  ["Fiction", "fiction", "BookOpen", "Novels and short stories."],
+  ["Nonfiction", "nonfiction", "Library", "History, essays, and reported stories."],
+  ["Children's books", "childrens-books", "Baby", "Picture books and early readers."],
+  ["School books", "school-books", "GraduationCap", "Practice books for school subjects."],
+  ["Poetry", "poetry", "Feather", "Poems and collected letters."],
 ] as const;
 
 const products = [
-  { name: "Demonstration Android phone", slug: "demo-android-phone", category: "mobile-phones", price: "899.00", compare: "999.00", stock: 12, weight: 190, featured: true, sku: "DEMO-PHONE-128" },
-  { name: "Demonstration laptop", slug: "demo-laptop", category: "computers", price: "3200.00", compare: null, stock: 4, weight: 1800, featured: true, sku: "DEMO-LAPTOP-14" },
-  { name: "Demonstration cotton shirt", slug: "demo-cotton-shirt", category: "mens-clothing", price: "85.00", compare: "120.00", stock: 30, weight: 220, featured: false, sku: "DEMO-SHIRT-M" },
-  { name: "Demonstration wristwatch", slug: "demo-wristwatch", category: "watches-and-jewellery", price: "240.00", compare: null, stock: 8, weight: 80, featured: false, sku: "DEMO-WATCH-01" },
-  { name: "Demonstration shea balm", slug: "demo-shea-balm", category: "beauty", price: "35.00", compare: null, stock: 40, weight: 150, featured: false, sku: "DEMO-BALM-50" },
-  { name: "Demonstration rice 5kg", slug: "demo-rice-5kg", category: "groceries", price: "78.00", compare: null, stock: 25, weight: 5000, featured: false, sku: "DEMO-RICE-5" },
-  { name: "Demonstration office chair", slug: "demo-office-chair", category: "furniture", price: "650.00", compare: null, stock: 3, weight: 9000, featured: false, sku: "DEMO-CHAIR-01" },
-  { name: "Demonstration blender", slug: "demo-blender", category: "kitchen", price: "210.00", compare: null, stock: 10, weight: 1600, featured: false, sku: "DEMO-BLEND-01" },
-  { name: "Demonstration football", slug: "demo-football", category: "sports", price: "95.00", compare: null, stock: 16, weight: 430, featured: false, sku: "DEMO-BALL-05" },
-  { name: "Demonstration notebook set", slug: "demo-notebook-set", category: "books", price: "28.00", compare: null, stock: 50, weight: 400, featured: false, sku: "DEMO-NOTE-3" },
-  { name: "Demonstration garden hose", slug: "demo-garden-hose", category: "garden", price: "70.00", compare: null, stock: 9, weight: 1200, featured: false, sku: "DEMO-HOSE-15" },
-  { name: "Demonstration car phone mount", slug: "demo-car-phone-mount", category: "automotive", price: "45.00", compare: null, stock: 20, weight: 180, featured: false, sku: "DEMO-MOUNT-01" },
+  { name: "Night Market", slug: "book-night-market", category: "fiction", price: "70.00", compare: null, stock: 18, weight: 340, featured: true, sku: "BOOK-NIGHT-01", blurb: "A sample novel about one night in an Accra market. Demonstration title, not a published book." },
+  { name: "Accra After Rain", slug: "book-accra-after-rain", category: "fiction", price: "65.00", compare: "80.00", stock: 14, weight: 310, featured: true, sku: "BOOK-ACCRA-01", blurb: "A sample novel set after a storm in Accra. Demonstration title, not a published book." },
+  { name: "Market Days in Kumasi", slug: "book-market-days", category: "fiction", price: "58.00", compare: null, stock: 16, weight: 300, featured: false, sku: "BOOK-KUMASI-01", blurb: "A sample story about market days in Kumasi. Demonstration title, not a published book." },
+  { name: "Cocoa and the Coast", slug: "book-cocoa-coast", category: "nonfiction", price: "85.00", compare: null, stock: 12, weight: 420, featured: true, sku: "BOOK-COCOA-01", blurb: "A sample nonfiction book about cocoa and the coast. Demonstration title, not a published book." },
+  { name: "A Short History of Gold", slug: "book-history-of-gold", category: "nonfiction", price: "90.00", compare: "110.00", stock: 9, weight: 460, featured: true, sku: "BOOK-GOLD-01", blurb: "A sample history of gold. Demonstration title, not a published book." },
+  { name: "Ananse and the River", slug: "book-ananse-river", category: "childrens-books", price: "42.00", compare: null, stock: 24, weight: 220, featured: false, sku: "BOOK-ANANSE-01", blurb: "A sample children's story. Demonstration title, not a published book." },
+  { name: "Bedtime in the Baobab", slug: "book-baobab-bedtime", category: "childrens-books", price: "38.00", compare: null, stock: 22, weight: 200, featured: false, sku: "BOOK-BAOBAB-01", blurb: "A sample bedtime picture book. Demonstration title, not a published book." },
+  { name: "Numbers for Primary Four", slug: "book-primary-numbers", category: "school-books", price: "35.00", compare: "45.00", stock: 40, weight: 280, featured: false, sku: "BOOK-NUM-P4", blurb: "A sample primary mathematics practice book. Demonstration title, not a published textbook." },
+  { name: "First Science Workbook", slug: "book-first-science", category: "school-books", price: "40.00", compare: null, stock: 30, weight: 300, featured: false, sku: "BOOK-SCI-01", blurb: "A sample first science workbook. Demonstration title, not a published textbook." },
+  { name: "English Grammar Practice", slug: "book-english-grammar", category: "school-books", price: "32.00", compare: null, stock: 36, weight: 260, featured: false, sku: "BOOK-ENG-01", blurb: "A sample English grammar practice book. Demonstration title, not a published textbook." },
+  { name: "Poems from the Volta", slug: "book-volta-poems", category: "poetry", price: "48.00", compare: null, stock: 15, weight: 180, featured: false, sku: "BOOK-VOLTA-01", blurb: "A sample poetry collection. Demonstration title, not a published book." },
+  { name: "Letters Home", slug: "book-letters-home", category: "poetry", price: "44.00", compare: "55.00", stock: 13, weight: 190, featured: false, sku: "BOOK-LETTERS-01", blurb: "A sample collection of letters. Demonstration title, not a published book." },
 ];
 
 function demoPassword() {
@@ -57,7 +42,16 @@ function demoPassword() {
 async function seed(prisma: PrismaClient) {
   await prisma.siteConfiguration.upsert({
     where: { id: "default" },
-    update: {},
+    update: {
+      marketplaceName: brandDefaults.name,
+      tagline: brandDefaults.tagline,
+      announcement: "Sample book catalog. Payments without Paystack keys stay simulated.",
+      heroTitle: "Books from sellers across Ghana.",
+      heroSubtitle: "One catalog of books. Each seller fulfills their own orders. Cash on delivery where the zone allows it.",
+      heroPrimaryLabel: "Browse books",
+      heroSecondaryLabel: "Sell on LZRE Books",
+      heroBadge: "Ghana",
+    },
     create: {
       id: "default",
       marketplaceName: brandDefaults.name,
@@ -69,13 +63,13 @@ async function seed(prisma: PrismaClient) {
       supportEmail: brandDefaults.supportEmail,
       phone: brandDefaults.phone,
       address: brandDefaults.address,
-      announcement: "Demonstration catalog. Payments without Paystack keys stay simulated.",
+      announcement: "Sample book catalog. Payments without Paystack keys stay simulated.",
       announcementActive: true,
-      heroTitle: "Everyday goods from sellers across Ghana.",
-      heroSubtitle: "One cart. Each seller fulfills their own items. Cash on delivery where the zone allows it.",
-      heroPrimaryLabel: "Browse products",
+      heroTitle: "Books from sellers across Ghana.",
+      heroSubtitle: "One catalog of books. Each seller fulfills their own orders. Cash on delivery where the zone allows it.",
+      heroPrimaryLabel: "Browse books",
       heroPrimaryHref: "/products",
-      heroSecondaryLabel: "Sell on LZRE",
+      heroSecondaryLabel: "Sell on LZRE Books",
       heroSecondaryHref: "/seller/register",
       heroBadge: "Ghana",
       socialLinks: {},
@@ -89,28 +83,20 @@ async function seed(prisma: PrismaClient) {
       create: { name, slug, icon, description, sortOrder: index },
     });
   }
-  const phones = await prisma.category.findUniqueOrThrow({ where: { slug: "phones-and-tablets" } });
-  const fashion = await prisma.category.findUniqueOrThrow({ where: { slug: "fashion" } });
-  await prisma.category.upsert({
-    where: { slug: "mobile-phones" },
-    update: { parentId: phones.id },
-    create: { name: "Mobile phones", slug: "mobile-phones", description: "Mobile phones listed by approved sellers.", icon: "Smartphone", parentId: phones.id, sortOrder: 0 },
-  });
-  await prisma.category.upsert({
-    where: { slug: "mens-clothing" },
-    update: { parentId: fashion.id },
-    create: { name: "Men's clothing", slug: "mens-clothing", description: "Men's clothing listed by approved sellers.", icon: "Shirt", parentId: fashion.id, sortOrder: 0 },
+  await prisma.category.updateMany({
+    where: { slug: { notIn: categories.map(([, slug]) => slug) } },
+    data: { visible: false },
   });
 
   const brand = await prisma.brand.upsert({
     where: { slug: "lzre-basics" },
-    update: { featured: true, visible: true },
-    create: { name: "LZRE Basics", slug: "lzre-basics", description: "Demonstration brand used by the sample catalog.", featured: true },
+    update: { name: "LZRE Books", description: "Books in the LZRE Books sample catalog.", featured: true, visible: true },
+    create: { name: "LZRE Books", slug: "lzre-basics", description: "Books in the LZRE Books sample catalog.", featured: true },
   });
   await prisma.brand.upsert({
     where: { slug: "northstar" },
-    update: {},
-    create: { name: "Northstar", slug: "northstar", description: "Second demonstration brand.", featured: false },
+    update: { visible: false, featured: false },
+    create: { name: "Northstar", slug: "northstar", description: "Second demonstration brand.", featured: false, visible: false },
   });
 
   for (const component of [
@@ -161,12 +147,12 @@ async function seed(prisma: PrismaClient) {
   }
 
   const pages = [
-    ["about", "About LZRE", "What LZRE is.", "LZRE is a multi-seller marketplace. Customers pay once. Each seller fulfills their own items.\n\n## Demonstration data\n\nSample products, shipping rates, and tax components are labeled as demonstration data. They are not offers or legal advice."],
-    ["shipping", "Shipping", "How delivery works.", "Delivery estimates come from the shipping method you choose at checkout.\n\n## Tracking\n\nA seller can store a carrier name and a tracking number. LZRE does not contact the courier and does not show live location.\n\nSeeded prices are demonstration rates."],
+    ["about", "About LZRE Books", "What LZRE Books is.", "LZRE Books is a multi-seller bookshop. Customers pay once. Each seller fulfills their own books.\n\n## Demonstration data\n\nSample titles, shipping rates, and tax components are labeled as demonstration data. They are not offers or legal advice."],
+    ["shipping", "Shipping", "How delivery works.", "Delivery estimates come from the shipping method you choose at checkout.\n\n## Tracking\n\nA seller can store a carrier name and a tracking number. LZRE Books does not contact the courier and does not show live location.\n\nSeeded prices are demonstration rates."],
     ["returns", "Returns", "How returns work.", "A return can be requested after an order is marked delivered, inside the return window set by an administrator.\n\n## Refunds\n\nAn online refund is recorded only when the payment provider confirms it. An administrator can record an offline refund after the money has actually been returned."],
-    ["privacy", "Privacy", "How LZRE handles personal information.", "LZRE stores the account, order, and seller information needed to run the marketplace.\n\n## Your requests\n\nUse the privacy request form to ask for access or deletion. Marketing email is sent only after you consent.\n\nThis page describes the product's controls. It is not a certification under the Ghana Data Protection Act."],
+    ["privacy", "Privacy", "How LZRE Books handles personal information.", "LZRE Books stores the account, order, and seller information needed to run the bookshop.\n\n## Your requests\n\nUse the privacy request form to ask for access or deletion. Marketing email is sent only after you consent.\n\nThis page describes the product's controls. It is not a certification under the Ghana Data Protection Act."],
     ["terms", "Terms", "Marketplace terms.", "By placing an order you buy from the marketplace, which then splits the order among the sellers whose items you chose.\n\n## Payments\n\nCard and mobile money payments are marked paid only after a verified Paystack webhook. Cash on delivery stays unpaid until collection is recorded. A sandbox checkout is labeled simulated and is not a payment."],
-    ["selling", "Selling on LZRE", "How selling works.", "Create a customer account, then submit a seller application. Products stay off the storefront until an administrator approves them.\n\n## Commission\n\nCommission is calculated on the server from the administrator's rate. Sellers cannot change it. Payouts stay pending until a Paystack subaccount exists or an administrator records a manual payout."],
+    ["selling", "Selling on LZRE Books", "How selling works.", "Create a customer account, then submit a seller application. Books stay off the storefront until an administrator approves them.\n\n## Commission\n\nCommission is calculated on the server from the administrator's rate. Sellers cannot change it. Payouts stay pending until a Paystack subaccount exists or an administrator records a manual payout."],
   ] as const;
   for (const [slug, title, description, body] of pages) {
     await prisma.cmsPage.upsert({
@@ -182,11 +168,19 @@ async function seed(prisma: PrismaClient) {
     create: { code: "WELCOME10", description: "Demonstration coupon: 10 percent off merchandise.", type: "PERCENTAGE", value: "10.00", active: true },
   });
 
-  const live = await prisma.promotion.findFirst({ where: { title: "Shop the demonstration catalog" } });
+  const heroCopy = {
+    title: "Books for every reader",
+    subtitle: "Fiction, school books, and stories from Ghana. These titles are sample catalog data.",
+    ctaLabel: "Browse books",
+    ctaHref: "/products",
+    badge: "Ghana",
+    active: true,
+  };
+  const live = await prisma.promotion.findFirst({ where: { placement: "HERO", active: true }, orderBy: { sortOrder: "asc" } });
   if (!live) {
-    await prisma.promotion.create({
-      data: { placement: "HERO", title: "Shop the demonstration catalog", subtitle: "Sample products from the LZRE demonstration store.", ctaLabel: "View products", ctaHref: "/products", active: true },
-    });
+    await prisma.promotion.create({ data: { placement: "HERO", ...heroCopy } });
+  } else {
+    await prisma.promotion.update({ where: { id: live.id }, data: heroCopy });
   }
   const expired = await prisma.promotion.findFirst({ where: { title: "Expired sample promotion" } });
   if (!expired) {
@@ -238,12 +232,12 @@ async function seed(prisma: PrismaClient) {
   });
   await prisma.sellerStore.upsert({
     where: { sellerId: seller.id },
-    update: { active: true },
+    update: { active: true, name: "LZRE Books", description: "Demonstration bookshop. The titles here are sample catalog data, not live inventory from an independent seller." },
     create: {
       sellerId: seller.id,
-      name: "LZRE platform store",
+      name: "LZRE Books",
       slug: "lzre-platform-store",
-      description: "Demonstration store. The products here are sample catalog data, not live inventory from an independent seller.",
+      description: "Demonstration bookshop. The titles here are sample catalog data, not live inventory from an independent seller.",
       city: "Accra",
       region: "Greater Accra",
       active: true,
@@ -270,14 +264,24 @@ async function seed(prisma: PrismaClient) {
     const category = await prisma.category.findUniqueOrThrow({ where: { slug: item.category } });
     const product = await prisma.product.upsert({
       where: { slug: item.slug },
-      update: { status: "APPROVED", fromPrice: item.price, compareFromPrice: item.compare },
+      update: {
+        status: "APPROVED",
+        name: item.name,
+        categoryId: category.id,
+        brandId: brand.id,
+        description: item.blurb,
+        fromPrice: item.price,
+        compareFromPrice: item.compare,
+        weightGrams: item.weight,
+        isFeatured: item.featured,
+      },
       create: {
         sellerId: seller.id,
         categoryId: category.id,
         brandId: brand.id,
         name: item.name,
         slug: item.slug,
-        description: "Demonstration product. This is sample catalog data for the LZRE marketplace. It is not a live offer.",
+        description: item.blurb,
         condition: "NEW",
         status: "APPROVED",
         currency: brandDefaults.currency,
@@ -287,11 +291,11 @@ async function seed(prisma: PrismaClient) {
         isFeatured: item.featured,
         publishedAt: new Date(),
         metaTitle: item.name,
-        metaDescription: "Demonstration product in the LZRE sample catalog.",
+        metaDescription: item.blurb,
       },
     });
     await prisma.productImage.deleteMany({ where: { productId: product.id } });
-    await prisma.productImage.create({ data: { productId: product.id, url: `/demo-image/${item.slug}`, alt: item.name, isPrimary: true } });
+    await prisma.productImage.create({ data: { productId: product.id, url: `/products/${item.slug}.jpg`, alt: item.name, isPrimary: true } });
     await prisma.productAttribute.deleteMany({ where: { productId: product.id } });
     await prisma.productAttribute.create({ data: { productId: product.id, name: "Label", value: "Demonstration" } });
     const variant = await prisma.productVariant.upsert({
@@ -307,6 +311,11 @@ async function seed(prisma: PrismaClient) {
     const movement = await prisma.inventoryMovement.findFirst({ where: { inventoryId: inventory.id, reason: "RECEIVE" } });
     if (!movement) await prisma.inventoryMovement.create({ data: { inventoryId: inventory.id, quantity: item.stock, reason: "RECEIVE", note: "Seeded demonstration stock." } });
   }
+
+  await prisma.product.updateMany({
+    where: { slug: { notIn: products.map((item) => item.slug) }, status: { not: "ARCHIVED" } },
+    data: { status: "ARCHIVED" },
+  });
 
   if (generated && created.length) {
     mkdirSync(".data", { recursive: true });

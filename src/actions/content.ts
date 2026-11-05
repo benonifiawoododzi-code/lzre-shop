@@ -16,8 +16,8 @@ export async function subscribeNewsletterAction(formData: FormData) {
   await sendEmail({
     to: parsed.data.email,
     template: "newsletter",
-    subject: "LZRE newsletter",
-    body: "Your email was saved on LZRE. This message is only delivered when an email provider is configured.",
+    subject: "LZRE Books newsletter",
+    body: "Your email was saved on LZRE Books. This message is only delivered when an email provider is configured.",
   });
   revalidatePath("/");
 }

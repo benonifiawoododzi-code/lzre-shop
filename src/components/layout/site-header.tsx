@@ -130,7 +130,7 @@ function SearchBox() {
 
   return (
     <form action="/search" className="relative" role="search">
-      <label className="sr-only" htmlFor="q">Search products</label>
+      <label className="sr-only" htmlFor="q">Search books</label>
       <Search className="pointer-events-none absolute left-3 top-3 size-5 text-muted" />
       <input
         autoComplete="off"
@@ -143,7 +143,7 @@ function SearchBox() {
           if (value.trim().length < 2) setSuggestions(null);
         }}
         onFocus={rememberRecent}
-        placeholder="Search products, brands, and more"
+        placeholder="Search books"
         value={term}
       />
       {term.trim().length >= 2 && suggestions ? (

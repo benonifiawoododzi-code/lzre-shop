@@ -21,7 +21,7 @@ export function SiteFooter({
         <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 py-12 md:grid-cols-[1fr_1fr]">
           <div>
             <h2 className="font-display text-3xl text-navy">Join our community</h2>
-            <p className="mt-2 max-w-md text-sm text-muted">Be the first to hear about new arrivals and marketplace news. We store this email only after you agree.</p>
+            <p className="mt-2 max-w-md text-sm text-muted">Be the first to hear about new books. We store this email only after you agree.</p>
           </div>
           <form action={subscribeNewsletterAction} className="grid gap-3">
             <label className="sr-only" htmlFor="newsletter-email">Email</label>
@@ -29,7 +29,7 @@ export function SiteFooter({
               <input className="h-12 flex-1 border border-line bg-paper px-4" id="newsletter-email" name="email" placeholder="Enter your email address" type="email" required />
               <button className="h-12 bg-navy px-6 font-semibold text-ivory" type="submit">Subscribe</button>
             </div>
-            <label className="flex gap-2 text-xs text-muted"><input name="consent" required type="checkbox" value="true" /> I agree to store this email for marketplace news.</label>
+            <label className="flex gap-2 text-xs text-muted"><input name="consent" required type="checkbox" value="true" /> I agree to store this email for bookshop news.</label>
           </form>
         </div>
       </section>
@@ -37,12 +37,12 @@ export function SiteFooter({
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="flex items-center gap-2 font-display text-2xl"><Leaf className="size-5" /> {name}</p>
-            <p className="mt-3 text-sm text-ivory/75">One catalog. Sellers fulfill their own orders. Prices are confirmed on the server at checkout.</p>
+            <p className="mt-3 text-sm text-ivory/75">One catalog of books. Sellers fulfill their own orders. Prices are confirmed on the server at checkout.</p>
           </div>
           <div className="text-sm">
             <p className="font-semibold">Shop</p>
             <div className="mt-3 grid gap-2 text-ivory/80">
-              <Link href="/products">All products</Link>
+              <Link href="/products">All books</Link>
               <Link href="/products?sort=newest">New arrivals</Link>
               <Link href="/products?discount=1">Deals</Link>
               <Link href="/categories">Categories</Link>

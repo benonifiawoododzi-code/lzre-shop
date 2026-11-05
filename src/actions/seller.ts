@@ -128,7 +128,7 @@ export async function saveProductAction(values: unknown) {
   let brandId: string | null = null;
   if (parsed.data.brandName) {
     const brandSlug = slugify(parsed.data.brandName);
-    const brand = await prisma.brand.upsert({ where: { slug: brandSlug }, update: { name: parsed.data.brandName }, create: { name: parsed.data.brandName, slug: brandSlug, description: `${parsed.data.brandName} on LZRE.` } });
+    const brand = await prisma.brand.upsert({ where: { slug: brandSlug }, update: { name: parsed.data.brandName }, create: { name: parsed.data.brandName, slug: brandSlug, description: `${parsed.data.brandName} on LZRE Books.` } });
     brandId = brand.id;
   }
   const prices = parsed.data.variants.map((variant) => cedisToPesewas(variant.price));
